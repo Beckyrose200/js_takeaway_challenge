@@ -1,3 +1,5 @@
+const customersOrder = [];
+
 class Orders{
   
     menu = [
@@ -11,4 +13,14 @@ class Orders{
     {dish: "Ice Cream", price: 1.50},
     {dish: "Milkshake", price: 1.10}
 ];
-};
+
+  addItemToBasket(customers_choice){
+    const allDishes = this.menu.map(menuItem => menuItem.dish);
+
+    if (allDishes.includes(customers_choice)) {
+      customersOrder.push(customers_choice);
+    } else {
+      throw 'Error item not on menu';
+    }
+  };
+}
